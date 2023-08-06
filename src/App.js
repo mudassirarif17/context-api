@@ -1,19 +1,22 @@
-import { useContext } from 'react';
-import Counter from './components/Counter';
+import React , {useContext} from 'react'
+// If you want use the value of context you should import the hook which is useContext hook
+import Counter from "./components/Counter"
+// Here I am importing my Context
+import {CounterContext} from "./context/Counter"
+import "./App.css"
 
-import { CounterContext } from './context/Counter';
 
-function App() {
+export default function App() {
   const counterState = useContext(CounterContext)
+  console.log("Context" , counterState)
   return (
     <div className='App'>
-    <h1>Count is {counterState.count}</h1>
-    <Counter/>
-    <Counter/>
-    <Counter/>
-    <Counter/>
+      <h1>Count is {counterState.count}</h1>
+      <p>{counterState.name}</p>
+      <Counter/>
+      <Counter/>
+      <Counter/>
+      <Counter/>
     </div>
-  );
+  )
 }
-
-export default App;

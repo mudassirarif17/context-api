@@ -11,8 +11,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <CounterProvider>
-    {/* <App /> */}
-    <App1 />
+    <App />
+    {/* <App1 /> */}
     </CounterProvider>
   </React.StrictMode>
 );

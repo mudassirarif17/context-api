@@ -1,15 +1,14 @@
-import React , {useContext} from 'react'
-import { CounterContext } from '../context/Counter';
+import React , {useContext} from "react";
+import { CounterContext } from "../context/Counter";
 
-const Counter = () => {
-  const counterContext = useContext(CounterContext);
-
-  return (
+const Counter=()=>{
+  const counterState = useContext(CounterContext);
+  return(
     <div>
-      <button onClick={counterContext.setCount(counterContext.count + 1)}>Increment</button>
-      <button>Decrement</button>
+    <button onClick={()=>counterState.setCount(counterState.count + 1)}>Increment</button>
+    <button onClick={()=>counterState.setCount(counterState.count - 1)}>Decrement</button>
     </div>
   )
 }
 
-export default Counter
+export default Counter;
